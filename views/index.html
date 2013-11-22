@@ -1,0 +1,31 @@
+<html>
+<head>
+
+<script src="js/jquery-2.0.3.js"></script>
+<script src="js/fb.js"></script>
+</head>
+<body>
+<div id="fb-root">
+</div>
+
+<input type='button' id='btnLogout' value='Logout' style="position: absolute;right:0;top:0;display:none" onClick='Logout();'/>
+<div align="center">
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+ <div id="status">
+  <a href="/loginWithFacebook">Login With Facebook</a>
+  <a href="/loginWithTwitter">Login With Twitter</a>
+ </div>
+
+ <div id ="postDiv" style="display:none;position:relative;top:50%;"> 
+  <input type="text" id="postContent"/>
+  <input type='button' value='Twitter' onclick=''/>
+  <input type='button' value='Facebook' onclick='postToFeed();'/>
+ </div>
+
+</div>
+</body>
+</html>
