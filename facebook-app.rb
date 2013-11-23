@@ -20,16 +20,8 @@ end
 
 
 get '/' do
-   puts "here I am"
+   #puts "homePage"
 	File.read('views/index.html')
-end
-
-get '/loginWithFacebook' do
-
-end
-
-get '/success' do
-	File.read('views/homePage.html')  
 end
 
 get '/loginWithTwitter' do
