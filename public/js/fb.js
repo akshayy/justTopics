@@ -38,9 +38,36 @@
   			{
   	    	 console.log('User cancelled login or did not authorize.');
    		}
-		},{scope: 'email,user_photos,user_videos'});
+		},{scope: 'email,user_photos,user_videos,user_likes,user_friends,user_interests'});
 	}
 
+   function getUserLikes()
+   {
+    FB.api('/me/likes',function(response) {
+     document.getElementById('txtArea').value=""; 
+     showTextArea();	
+     document.getElementById('txtArea').value+=(JSON.stringify(response.data));
+    });
+   }
+
+   function getUserInterests()
+   {
+    FB.api('/me/interests',function(response) {
+     document.getElementById('txtArea').value="";
+     showTextArea();	
+     document.getElementById('txtArea').value+=(JSON.stringify(response.data)); 
+    });
+   }
+   
+   function getFriends()
+   {
+    FB.api('/me/friends',function(response) {
+    	document.getElementById('txtArea').value="";
+      showTextArea();
+      document.getElementById('txtArea').value+=(JSON.stringify(response.data)); 
+    });
+   }
+    
 	function logout()
 	{
       hideSharingDetails();
@@ -98,12 +125,11 @@
     	document.getElementById('postDiv').style.display="none";
     	document.getElementById('btnLogout').style.display="none";
     	document.getElementById('status').style.display="block";
+      document.getElementById('txtArea').style.display="none";
   	}
 
-  	function loginWithTwitter()
-  	{
-    	$.get( "/loginWithTwitter", function( data ) 
-      {
-      	alert( "done" );
-      });
+   function showTextArea()
+   {
+      document.getElementById('txtArea').style.display="block";
    }
+

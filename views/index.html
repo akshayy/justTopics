@@ -21,9 +21,20 @@
 
  <div id ="postDiv" style="display:none;position:relative;top:50%;"> 
   <input type="text" id="postContent"/>
-<!--<input type='button' value='Twitter' onclick=''/> -->
-  <input type='button' value='Facebook' onclick='postToFeed();'/>
+  <!--<input type='button' value='Twitter' onclick=''/> -->
+  <input type='button' value='Post Link to Facebook' onclick='postToFeed();'/>
+  <br/>
+  <br/>
+  <input type='button' value='Get Likes' onclick='getUserLikes();'/>
+ <!--  <input type='button' value='Get Insights' onclick='getInsights();'/> -->
+  <input type='button' value='Get Friends List' onclick='getFriends();'/>
+  <input type='button' value='Get Interests' onclick='getUserInterests();'/>
  </div>
+ <br/>
+ 
+ 
+ <textarea id="txtArea" rows="25" cols="125" style="overflow-y: auto;display:none"/>
+ 
 
 </div>
 </body>
