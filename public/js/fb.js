@@ -38,7 +38,7 @@
   			{
   	    	 console.log('User cancelled login or did not authorize.');
    		}
-		},{scope: 'email,user_photos,user_videos,user_likes,user_friends,user_interests'});
+		},{scope: 'email,user_photos,user_videos,user_likes,user_friends,user_interests,read_insights'});
 	}
 
    function getUserLikes()
@@ -132,4 +132,27 @@
    {
       document.getElementById('txtArea').style.display="block";
    }
-
+   
+   function getInsights()
+   {
+    var pageId = document.getElementById('pageID').value.trim();
+    if(pageId.length==0)
+    {
+		alert("Enter page ID");
+		return;
+    }
+	 var dropDown = document.getElementById('insightsDropDown');
+    var optionSelected = dropDown.options[dropDown.selectedIndex].value;
+    if(optionSelected == "")
+    {
+      alert("Select an insight first");
+		return;
+    }
+    
+	 FB.api('/' + pageId + '/insights/'+ optionSelected, function(response)
+    {
+		document.getElementById('txtArea').value="";
+     	showTextArea();	
+     	document.getElementById('txtArea').value+=(JSON.stringify(response.data)); 
+    }); 
+}

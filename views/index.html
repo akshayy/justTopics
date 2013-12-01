@@ -1,6 +1,5 @@
 <html>
 <head>
-
 <script src="js/jquery-2.0.3.js"></script>
 <script src="js/fb.js"></script>
 </head>
@@ -29,6 +28,20 @@
  <!--  <input type='button' value='Get Insights' onclick='getInsights();'/> -->
   <input type='button' value='Get Friends List' onclick='getFriends();'/>
   <input type='button' value='Get Interests' onclick='getUserInterests();'/>
+  <br/>
+  <br/>
+  Page id:<input type="text" id="pageID"/>
+  <select id = "insightsDropDown">
+  	<option value="">--Select insight--</option>
+  	<option value="page_fans_country">Fans by Country</option>
+  	<option value="page_impressions_by_country_unique">Page impressions by country</option>
+  	<option value="page_views">Page views</option>
+  	<option value="page_impressions_by_age_gender_unique">Page impressions by age</option>
+  	<option value="page_fans_gender_age">Page fans by age</option>
+  	<option value="page_fans_online">Hourly distribution</option>
+  	<option value="page_negative_feedback_by_type_unique">Number of page unlikes</option>
+  </select>
+  <input type="button" value="Fetch insight" onclick='getInsights();'/> 
  </div>
  <br/>
  
