@@ -8,6 +8,7 @@ configure do
   enable :sessions
 end
 
+
 helpers do
   def admin?
     session[:admin]
@@ -15,7 +16,7 @@ helpers do
 end
 
 use OmniAuth::Builder do
-  provider :twitter, 'e756IwG9nog9CtllDZ9tkQ', 'yG3NNjC9rbipWGPavvhDiipYI5qpMRX7JL6JigZDB8'
+  provider :twitter, 'ysSuTVZW4ZSyXgCqiqNLw', 'e9WgcwGa2BFXZN2fAsowynOmFuFS4W247QtB7kBOI'
 end
 
 
@@ -30,10 +31,10 @@ get '/loginWithTwitter' do
 end
 
 get '/auth/twitter/callback' do
-  env['omniauth.auth'] ? session[:admin] = true : halt(401,'Not Authorized')
-  
-  #session[:admin] = true
-  #env['omniauth.auth']
+  #env['omniauth.auth'] ? session[:admin] = true : halt(401,'Not Authorized')
+  session[:admin] = true
+  env['omniauth.auth']
+  File.read('views/home.html')
 end
 
 get '/auth/failure' do

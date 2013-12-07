@@ -40,7 +40,24 @@
    		}
 		},{scope: 'email,user_photos,user_videos,user_likes,user_friends,user_interests,read_insights'});
 	}
-
+   
+   function loginWithTwitter()
+	{
+	 	$.ajax(
+        {
+         data: "",
+         url: '/loginWithTwitter',
+         timeout: 20000,
+         error: function()
+         {
+           console.log("Failed to submit"); // remove when going live
+         },//end of error function
+         success: function(response)
+         {
+         }
+        });//end of ajax call
+	}
+ 
    function getUserLikes()
    {
     FB.api('/me/likes',function(response) {
